@@ -1,0 +1,23 @@
+/*Write an efficient program to find the sum of contiguous subarray within a one-dimensional array 
+of numbers which as the largest sum.
+
+Example: 
+Input : {-2,-3,4,-1,-2,1,5,-3}
+Output : 7
+Explanation: 4+(-1)+(-2)+1+5=7
+*/
+
+#include <stdio.h>
+int LargestSubArray(int arr[],int n){
+    int a=0,b=0,i;
+    for(i=0;i<n;i++){
+        b=b+arr[i];
+        if(b<0){
+            b=0;
+        }
+        if(a<b){
+            a=b;
+        }
+    }
+    return a;
+}

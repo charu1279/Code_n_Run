@@ -1,0 +1,62 @@
+/*The program must accept a string S and an integer N as the input. The program must print the Nth non-repeating character as the output.
+
+Note: The string contains at least N non-repeating characters.
+
+Boundary Condition(s):
+3 <= Length of string S <= 100
+1 <= N <= 26
+
+Input Format:
+The first line contains the value of string S.
+The second line contains the value of N.
+
+Output Format:
+The first line contains the Nth non-repeating character.
+
+Example Input/Output 1:
+Input:
+HELLO
+3
+
+Output:
+O
+
+Explanation:
+N = 3, the first non-repeating character is H.
+The second non-repeating character is E.
+The third non-repeating character is O.
+Hence O is printed as the output.
+
+Example Input/Output 2:
+Input:
+aaaaabbbcdfecdpqpq
+2
+
+Output:
+e
+*/
+
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char s[100];
+    scanf("%s",s);
+    int n;
+    scanf("%d",&n);
+    int freq[128]={0},i,repeated=0;
+    for(i=0;s[i]!='\0';i++){
+        freq[s[i]]++;
+    }
+    for(i=0;s[i]!='\0';i++){
+        if(freq[s[i]]==1){
+            repeated++;
+            if(repeated==n){
+                printf("%c",s[i]);
+                break;
+            }
+        }
+    }
+}
+

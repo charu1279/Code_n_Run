@@ -1,0 +1,66 @@
+/*The program must accept a string S as the input. The program must print the first consonant in S followed by the first vowel in S, then the second consonant in S followed by the second vowel in S and so on. If there is no consonant remaining, then print the remaining vowels in the given order. If there is no vowel remaining, then print the remaining consonants in the given order as the output.
+Note: String S contains only lower case alphabets.
+
+Boundary Condition(s):
+1 <= Length of S <= 1000
+
+Input Format:
+The first line contains the string S.
+
+Output Format:
+The first line contains the string value.
+
+Example Input/Output 1:
+Input:
+elephant
+
+Output:
+lepehant
+
+Explanation:
+The first consonant in elephant is l
+The first vowel in elephant is e
+The second consonant in elephant is p
+The second vowel in elephant is e
+The third consonant in elephant is h
+The third vowel in elephant is a
+The remaining consonants are nt.
+Hence lepehant is printed.
+
+Example Input/Output 2:
+Input:
+caesious 
+
+Output:
+casesiou
+*/
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char s[100],c[100],v[100];
+    scanf("%s",s);
+    int i,k=0,j=0,len=strlen(s);
+    for(i=0;s[i]!='\0';i++){
+        if(s[i]=='a'||s[i]=='e'||s[i]=='i'||s[i]=='o'||s[i]=='u'){
+            v[j++]=s[i];
+        }
+        else{
+            c[k++]=s[i];
+        }
+    }
+    int m=k,t=j,n=0;
+    k=j=0;
+    while(n<len){
+        if(k<m){
+            printf("%c",c[k++]);
+            n++;
+        }
+        if(j<t){
+            printf("%c",v[j++]);
+            n++;
+        }
+        
+    }
+}

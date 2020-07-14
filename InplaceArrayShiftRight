@@ -1,0 +1,26 @@
+/*You must implement the function shiftRight which accepts an array arr and shifts the values in-place to the right.
+That is the array arr must be modified to reflect the shifted values. N represents the size of the array arr.
+
+Example Input/Output 1:
+Input:
+5
+10 20 30 40 50
+
+Output:
+50 10 20 30 40
+
+Explanation:
+Each value is shifted to it's right.
+10 is moved to the position of 20, 20 to 30, 30 to 40, 40 to 50.
+The last element 50 as it does not have any value to the right, it is moved to the first position (that is to the position of 10).
+
+*/
+
+void shiftRight(int arr[], int N){
+    int temp=arr[N-1];
+    for(int i=N-1;i>0;i--){
+        arr[i]=arr[i-1];
+    }
+    arr[0]=temp;
+    return arr;
+}

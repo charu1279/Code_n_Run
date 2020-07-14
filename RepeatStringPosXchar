@@ -1,0 +1,47 @@
+/*The program accepts a string str and an integer value X. If the length of str is less than X, the string may be repeated multiple times to reach till length of X.
+
+Example Input/Output 1:
+Input:
+apple
+24
+
+Output:
+l
+
+Explanation:
+Length of apple is 5.he Program  So apple is repeated 5 times appleappleappleappleapple.
+In this repeated string value, 24th character is l.
+
+Example Input/Output 2:
+Input:
+tulsi
+6
+
+Output:
+t
+*/
+
+
+#include <stdio.h>
+
+int main()
+{
+    char s[100],b[100];
+    int t;
+    scanf("%s %d",s,&t);
+    int l=strlen(s),k=0;
+    for(int i=0;i<l;i++){
+        for(int j=0;s[j]!='\0';j++){
+            b[k++]=s[j];
+            if(k==t){
+                break;
+            }
+        }
+    }
+    for(int i=0;i<k;i++){
+        if(i==t-1){
+            printf("%c",b[i]);
+        }
+    }
+}
+
